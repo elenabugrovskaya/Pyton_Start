@@ -30,7 +30,7 @@ def koefResult(equation1):
                 result += ' - ' + str(abs(i[1])) + 'x^' + str(abs(i[0]))
             elif i[1] > 0:
                 result += ' + ' + str(abs(i[1])) + 'x^' + str(abs(i[0]))
-        result = result.replace('1x^', 'x^').replace('x^1 ', 'x ').replace('x^0', ' ')
+        result = result.replace('x^0', ' ')
     return result + " = 0"
 equation = {}
 print(create_equation())
