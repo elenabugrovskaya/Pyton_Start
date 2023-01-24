@@ -33,15 +33,26 @@ def rle_decode(data):
             count = ''
     return decode
 
+
 with open('file_encode.txt', 'r') as file:
     decoded_string = file.read()
 
 with open('file_decode.txt', 'w') as file:
     encoded_string = rle_encode(decoded_string)
     file.write(encoded_string)
+
 print('Decoded string: \t' + decoded_string)
 print('Encoded string: \t' + rle_encode(decoded_string))
 
+with open('file_decode.txt', 'r') as file:
+    encoded_string = file.read()
+
+with open('file_encode1.txt', 'w') as file:
+    decoded_string = rle_decode(encoded_string)
+    file.write(decoded_string)
+
+print('Encoded string: \t' + encoded_string)
+print('Decoded string: \t' + rle_decode(encoded_string))
 
 
 
