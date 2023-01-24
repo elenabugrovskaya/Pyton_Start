@@ -54,9 +54,11 @@ def game_turn():
         return True
     if game_bot_mode and current_player == player_two_name:
         position = bot_turn()
+        switch_player()
     else:
         play_board.draw_board()
         position = player_turn()
+        switch_player()
     play_board.set_board(position, mark)
     board = play_board.get_board()
     for pos in play_board.win_con:
@@ -81,7 +83,7 @@ def bot_turn():
     self_win = check_pre_win(board, mark)
     if self_win:
         return self_win + 1
-    enemy_win = chek_pre_win(board, reverse_mark())
+    enemy_win = check_pre_win(board, reverse_mark())
     if enemy_win:
         return enemy_win + 1
     for pos in {'1', '3', '7', '9'}:
