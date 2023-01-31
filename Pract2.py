@@ -52,4 +52,3 @@ for i in range(n-1):
       my_list[i+1] = temp
 print(my_list)
 
-
